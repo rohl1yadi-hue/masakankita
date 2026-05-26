@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Masakan Kita, Selera Rumahan - Ebook Resep Keluarga</title>
+<meta name="description" content="Ebook resep rumahan pilihan dengan cita rasa khas dapur Indonesia. Praktis, hemat, dan mudah untuk pemula.">
+<style>
+:root{
+  --orange:#ea580c;
+  --orange-dark:#c2410c;
+  --orange-light:#f97316;
+  --cream:#fff7ed;
+  --cream-dark:#ffedd5;
+  --green:#16a34a;
+  --brown:#7c2d12;
+  --brown-mid:#9a3412;
+  --text:#431407;
+  --muted:#78350f;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Noto Sans",sans-serif;
+  background:var(--cream);
+  color:var(--text);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+
+/* Header */
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,247,237,.85);
+  backdrop-filter:saturate(180%) blur(12px);
+  border-bottom:1px solid #fed7aa;
+}
+.header-inner{
+  max-width:1120px;margin:0 auto;padding:12px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.logo{display:flex;align-items:center;gap:8px;font-weight:900;font-size:18px;color:var(--brown)}
+.logo-emoji{font-size:24px;line-height:1}
+.btn-header{
+  background:var(--orange);color:#fff;
+  padding:10px 18px;border-radius:999px;font-weight:800;font-size:14px;
+  box-shadow:0 6px 16px rgba(234,88,12,.28);
+  transition:transform .15s,box-shadow .15s;white-space:nowrap
+}
+.btn-header:active{transform:translateY(1px)}
+.btn-header:hover{box-shadow:0 8px 20px rgba(234,88,12,.35)}
+
+/* Hero */
+#hero{position:relative;padding:72px 20px 40px;text-align:center;overflow:hidden}
+#hero::before{
+  content:"";position:absolute;inset:-20% -10% auto -10%;height:70%;
+  background:radial-gradient(60% 60% at 50% 0%, #fed7aa 0%, transparent 70%);
+  opacity:.7;z-index:-1;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:6px;
+  background:#fff;border:1px solid #fed7aa;padding:6px 14px;border-radius:999px;
+  font-size:13px;font-weight:700;color:var(--orange-dark);box-shadow:0 2px 8px rgba(0,0,0,.04)
+}
+h1{
+  font-size:clamp(38px,7vw,68px);line-height:1.02;margin:18px 0 16px;
+  color:var(--brown);letter-spacing:-.02em;font-weight:900
+}
+h1 span{
+  color:var(--orange);
+  background:linear-gradient(180deg,var(--orange-light),var(--orange));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.lead{
+  font-size:clamp(17px,2.4vw,20px);max-width:740px;margin:0 auto 28px;color:var(--muted)
+}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:10px;
+  background:linear-gradient(180deg,#fb923c,var(--orange));
+  color:#fff;padding:18px 30px;border-radius:16px;
+  font-weight:900;font-size:18px;letter-spacing:.2px;
+  box-shadow:0 12px 30px rgba(234,88,12,.35), inset 0 1px 0 rgba(255,255,255,.25);
+  transition:transform .15s,box-shadow .15s;
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(234,88,12,.4)}
+.trust{margin-top:14px;font-size:13px;color:var(--brown-mid);display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.trust span{display:inline-flex;align-items:center;gap:6px}
+
+.mockup-wrap{margin:48px auto 0;position:relative;width:min(360px,85vw)}
+.book{
+  width:100%;aspect-ratio:3/4;border-radius:28px;
+  background:linear-gradient(145deg,#fff,#fff7ed 60%,#ffedd5);
+  border:2px solid #fdba74;
+  box-shadow:0 30px 60px rgba(124,45,18,.18),0 4px 12px rgba(0,0,0,.06);
+  display:grid;place-items:center;padding:24px;position:relative;overflow:hidden
+}
+.book::after{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(80% 50% at 50% 0%, rgba(234,88,12,.12), transparent 60%);
+}
+.book-inner{
+  width:100%;height:100%;border-radius:20px;border:1.5px dashed #fdba74;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+  background:rgba(255,255,255,.6);text-align:center;padding:20px
+}
+.book-emoji{font-size:64px;filter:drop-shadow(0 6px 12px rgba(234,88,12,.25))}
+.book-title{font-weight:900;color:var(--brown);font-size:22px;line-height:1.2}
+.book-sub{font-size:13px;color:var(--muted)}
+.float-emoji{position:absolute;font-size:32px;animation:float 5s ease-in-out infinite}
+.f1{top:-10px;left:-10px;animation-delay:.2s}
+.f2{bottom:10px;right:-12px;font-size:36px;animation-delay:1s}
+.f3{top:40%;right:-20px;font-size:28px;animation-delay:1.6s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+/* Sections */
+section{padding:80px 20px}
+.container{max-width:1120px;margin:0 auto}
+.section-title{
+  font-size:clamp(28px,4.2vw,42px);text-align:center;color:var(--brown);
+  font-weight:900;letter-spacing:-.01em;margin-bottom:10px
+}
+.section-sub{max-width:680px;margin:0 auto 44px;text-align:center;color:var(--muted);font-size:17px}
+
+/* Kenapa */
+#kenapa{background:#fff;border-top:1px solid #ffe4c7;border-bottom:1px solid #ffe4c7}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{
+  background:var(--cream);border:1px solid #fed7aa;border-radius:24px;padding:28px;
+  box-shadow:0 6px 18px rgba(124,45,18,.06);transition:transform .2s,box-shadow .2s
+}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(124,45,18,.12)}
+.card-icon{
+  width:60px;height:60px;border-radius:16px;display:grid;place-items:center;
+  font-size:32px;background:#fff;border:1px solid #fde68a;box-shadow:inset 0 -2px 0 #fde68a;margin-bottom:16px
+}
+.card h3{font-size:20px;color:var(--brown);margin-bottom:8px;font-weight:800}
+.card p{color:var(--muted);font-size:15.5px}
+
+/* Isi */
+.isi-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
+.isi-text p{color:var(--muted);font-size:17px;margin-bottom:14px}
+.checklist{
+  background:#fff;border:1px solid #fed7aa;border-radius:24px;padding:22px;
+  box-shadow:0 10px 30px rgba(0,0,0,.05)
+}
+.check-item{
+  display:flex;gap:14px;align-items:flex-start;padding:14px 10px;border-radius:14px
+}
+.check-item:not(:last-child){border-bottom:1px dashed #fde68a}
+.check-emoji{font-size:26px;line-height:1;margin-top:2px}
+.check-item strong{display:block;color:var(--brown);font-size:16px}
+.check-item span{color:var(--muted);font-size:14.5px}
+
+/* Testimoni */
+#testi{background:linear-gradient(180deg,#fff,#fff7ed)}
+.testi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:960px;margin:0 auto}
+.testi{
+  background:#fff;border:1px solid #fed7aa;border-radius:24px;padding:26px;
+  box-shadow:0 8px 20px rgba(124,45,18,.07);position:relative
+}
+.testi::before{
+  content:"“";position:absolute;top:10px;left:18px;font-size:56px;line-height:1;color:#fdba74;font-family:serif;opacity:.5
+}
+.testi p{font-size:17px;color:var(--text);margin:14px 0 14px;font-style:italic}
+.testi .author{display:flex;align-items:center;gap:10px;margin-top:8px;font-weight:700;color:var(--brown-mid);font-size:14px}
+.avatar{width:36px;height:36px;border-radius:50%;background:#ffedd5;display:grid;place-items:center;font-size:18px;border:1px solid #fed7aa}
+
+/* CTA Akhir */
+#akhir{padding:90px 20px}
+.final{
+  background:linear-gradient(180deg,var(--orange),#c2410c);
+  color:#fff;border-radius:32px;padding:56px 28px;text-align:center;
+  box-shadow:0 20px 50px rgba(234,88,12,.4);position:relative;overflow:hidden
+}
+.final::before{
+  content:"";position:absolute;inset:-30% -10% auto; height:60%;
+  background:radial-gradient(50% 50% at 50% 0%, rgba(255,255,255,.25), transparent 70%);
+}
+.final h2{font-size:clamp(28px,4.5vw,44px);font-weight:900;margin-bottom:12px;letter-spacing:-.01em}
+.final p{max-width:720px;margin:0 auto 18px;font-size:18px;opacity:.95}
+.btn-white{
+  display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--orange-dark);
+  padding:16px 26px;border-radius:14px;font-weight:900;font-size:17px;margin-top:10px;
+  box-shadow:0 10px 24px rgba(0,0,0,.15);transition:transform .15s
+}
+.btn-white:hover{transform:translateY(-2px)}
+
+/* Footer */
+footer{padding:40px 20px 80px;text-align:center;color:var(--brown-mid);font-size:14px}
+footer a{color:var(--orange-dark);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* Responsive */
+@media (max-width:960px){
+  .cards{grid-template-columns:1fr 1fr}
+  .isi-grid{grid-template-columns:1fr;gap:28px}
+}
+@media (max-width:720px){
+  header{position:sticky}
+  .cards,.testi-grid{grid-template-columns:1fr}
+  section{padding:64px 18px}
+  #hero{padding:56px 18px 30px}
+  .btn-primary{width:100%;justify-content:center}
+  .header-inner{padding:10px 16px}
+  .logo{font-size:16px}
+  .btn-header{padding:9px 14px;font-size:13px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo"><span class="logo-emoji">🍲</span> Masakan Kita</div>
+    <a class="btn-header" href="https://lynk.id/alifad/w7z10kwlvme1" target="_blank" rel="noopener">Download Sekarang</a>
+  </div>
+</header>
+
+<main>
+  <section id="hero">
+    <span class="eyebrow">🥘 Ebook Resep Digital • Langsung Download</span>
+    <h1>Masakan Kita,<br><span>Selera Rumahan</span></h1>
+    <p class="lead">"Masakan Kita, Selera Rumahan" hadir sebagai teman memasak untuk keluarga tercinta. Buku ini berisi kumpulan resep rumahan pilihan dengan cita rasa khas dapur Indonesia yang sederhana, praktis, dan tetap menggugah selera.</p>
+    <a class="btn-primary" href="https://lynk.id/alifad/w7z10kwlvme1" target="_blank" rel="noopener">Download Ebook Sekarang 🍲</a>
+    <div class="trust">
+      <span>✅ File PDF, bisa dibuka di HP</span>
+      <span>💚 Cocok untuk pemula</span>
+      <span>🔒 Pembayaran aman via Lynk.id</span>
+    </div>
+
+    <div class="mockup-wrap">
+      <div class="float-emoji f1">🌶️</div>
+      <div class="float-emoji f2">🥘</div>
+      <div class="float-emoji f3">🍳</div>
+      <div class="book">
+        <div class="book-inner">
+          <div class="book-emoji">🍲</div>
+          <div class="book-title">Masakan Kita,<br>Selera Rumahan</div>
+          <div class="book-sub">Kumpulan Resep Harian Keluarga</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kenapa">
+    <div class="container">
+      <h2 class="section-title reveal">Kenapa Buku Ini Beda?</h2>
+      <p class="section-sub reveal">Bukan resep chef restoran yang ribet. Ini resep ibu-ibu di dapur, yang tiap hari mikir "hari ini masak apa ya?" — Bun, kita samaan.</p>
+      <div class="cards">
+        <div class="card reveal">
+          <div class="card-icon">💰</div>
+          <h3>Praktis & Hemat</h3>
+          <p>Bahannya mudah ditemukan di warung atau pasar. Nggak perlu belanja mahal, nggak perlu alat aneh-aneh. Masak enak tetap hemat.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">👩‍🍳</div>
+          <h3>Untuk Pemula</h3>
+          <p>Disusun dengan langkah-langkah yang mudah dipahami. Dijamin anti gagal, bahkan buat yang baru belajar masak sekalipun.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">🌶️</div>
+          <h3>Selera Nusantara</h3>
+          <p>Lengkap dari lauk harian, sayur bening, tumis, sampai sambal yang bikin nambah nasi. Rasa familiar di lidah keluarga Indonesia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="isi">
+    <div class="container isi-grid">
+      <div class="isi-text reveal">
+        <h2 class="section-title" style="text-align:left">Di Dalam Ebook, Kamu Bakal Dapat:</h2>
+        <p>Disusun dengan langkah-langkah yang mudah dipahami, buku ini cocok untuk pemula maupun ibu rumah tangga yang ingin menyajikan hidangan lezat setiap hari tanpa ribet.</p>
+        <p>Mulai dari lauk harian, sayur, sambal, hingga menu favorit keluarga, semua diracik dengan bahan yang mudah ditemukan dan rasa yang familiar di lidah.</p>
+        <p style="margin-top:18px;display:flex;align-items:center;gap:8px;color:var(--green);font-weight:700"><span style="font-size:20px">✓</span> Langsung praktik hari ini juga!</p>
+      </div>
+      <div class="checklist reveal">
+        <div class="check-item">
+          <div class="check-emoji">🍗</div>
+          <div><strong>Lauk Harian Keluarga</strong><span>Ayam kecap, semur, tempe orek, telur balado — yang bikin anak lahap.</span></div>
+        </div>
+        <div class="check-item">
+          <div class="check-emoji">🥬</div>
+          <div><strong>Sayur Bening & Tumis</strong><span>Bayam, sop, kangkung, capcay. Segar, cepat, bergizi.</span></div>
+        </div>
+        <div class="check-item">
+          <div class="check-emoji">🌶️</div>
+          <div><strong>Sambal Khas Rumahan</strong><span>Sambal bawang, terasi, matah. Pedasnya pas, bikin nagih.</span></div>
+        </div>
+        <div class="check-item">
+          <div class="check-emoji">👶</div>
+          <div><strong>Menu Favorit Anak</strong><span>Nugget homemade, sup ayam, mie goreng spesial tanpa ribet.</span></div>
+        </div>
+        <div class="check-item">
+          <div class="check-emoji">💡</div>
+          <div><strong>Tips Hemat Dapur</strong><span>Cara nyetok bumbu, olah sisa bahan, biar dapur tetap waras.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testi">
+    <div class="container">
+      <h2 class="section-title reveal">Kata Ibu-Ibu yang Udah Coba</h2>
+      <p class="section-sub reveal">Bukan testimoni artis, ini testimoni asli dari dapur tetangga sebelah.</p>
+      <div class="testi-grid">
+        <div class="testi reveal">
+          <p>"Akhirnya suami bilang masakan rumah lebih enak dari warteg. Tiap sore sekarang nanyain 'Mah, hari ini masak apa?' Rasanya pengen nangis bahagia."</p>
+          <div class="author"><span class="avatar">👩</span> Ibu Rina — Tangerang</div>
+        </div>
+        <div class="testi reveal">
+          <p>"Anak yang susah makan jadi lahap. Aku coba resep ayam goreng mentega dari ebook ini, piringnya bersih terus. Padahal biasanya nasi sisa mulu."</p>
+          <div class="author"><span class="avatar">👩‍🦰</span> Ibu Dewi — Sidoarjo</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="akhir">
+    <div class="container">
+      <div class="final reveal">
+        <h2>Lebih dari Sekadar Buku Resep</h2>
+        <p>Lebih dari sekadar buku resep, "Masakan Kita, Selera Rumahan" adalah inspirasi untuk menghadirkan kehangatan, kebersamaan, dan cinta melalui setiap hidangan di meja makan keluarga.</p>
+        <p>Yuk, Bun. Bikin wangi bawang goreng kembali memenuhi rumah. Biar anak pulang sekolah langsung lari ke dapur, bukan ke HP.</p>
+        <a class="btn-white" href="https://lynk.id/alifad/w7z10kwlvme1" target="_blank" rel="noopener">Download Ebook Sekarang →</a>
+        <div style="margin-top:12px;font-size:13px;opacity:.9">Sekali beli, bisa dipakai selamanya ❤️</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 Masakan Kita, Selera Rumahan. Ebook digital resmi dijual di</p>
+  <p><a href="https://lynk.id/alifad/w7z10kwlvme1" target="_blank" rel="noopener">lynk.id/alifad/w7z10kwlvme1</a></p>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
